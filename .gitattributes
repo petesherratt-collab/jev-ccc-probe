@@ -19,6 +19,11 @@
 # PowerShell is the exception: Windows tooling expects CRLF.
 *.ps1     text eol=crlf
 
+# Extensionless files match none of the rules above, so they fall through to
+# core.autocrlf -- which on Windows rewrites them in the working tree and leaves
+# them permanently "modified" against the index. Pin them explicitly.
+LICENSE        text eol=lf
+
 # Git's own control files: keep LF so `git add` stops warning about them.
 .gitattributes text eol=lf
 .gitignore     text eol=lf
