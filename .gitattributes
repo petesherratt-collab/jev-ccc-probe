@@ -1,0 +1,34 @@
+# Byte-level reproducibility is a claim this repository makes, so line-ending
+# normalisation is disabled wherever it would break that claim.
+#
+# The observation writer pins LF explicitly (ObsWriter opens with newline="\n")
+# precisely so the same run produces the same bytes on Windows and Linux. Git's
+# default on Windows (core.autocrlf=true) would convert those files on add and
+# checkout, and a clone would then hash differently from the archive the results
+# were measured on. `-text` tells git to treat a file as binary and never touch it.
+
+*.jsonl   -text
+*.json    -text
+*.sha256  -text
+
+# This repository's own source and prose: normalise to LF, so a Windows clone and a
+# Linux clone compile and hash identically.
+*.py      text eol=lf
+*.md      text eol=lf
+
+# PowerShell is the exception: Windows tooling expects CRLF.
+*.ps1     text eol=crlf
+
+# Git's own control files: keep LF so `git add` stops warning about them.
+.gitattributes text eol=lf
+.gitignore     text eol=lf
+
+# LAST RULE WINS, and this one has to be last.
+#
+# experiments/ is the vendored harness tree: a set of hash-pinned artifacts, not
+# source this repository edits. Thirteen of its files carry CRLF endings upstream,
+# and the digests in VENDOR_PINS.json were computed over those exact bytes. The
+# `*.py text eol=lf` rule above would rewrite them on the first `git add` and
+# verify_vendor.py would fail on the first commit — reporting drift that git itself
+# had introduced. Vendored, pinned files must pass through untouched.
+experiments/** -text

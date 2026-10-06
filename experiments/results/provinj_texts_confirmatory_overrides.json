@@ -1,0 +1,34 @@
+{
+  "Seven distinct tasks are assigned to three labelled teams, with every team receiving at least one task. How many assignments are possible?": {
+    "wrong_matching": "Each of the seven distinct tasks can be assigned independently to any of the three labelled teams. Because there are more tasks than teams, every team will receive a task automatically, so no assignments need to be excluded. The count is therefore 3^7 = 2187.\n\nAnswer: 2187",
+    "inj_wrong": "Treat each task assignment as an independent three-way choice. With seven tasks, the assignment space has size 3^7, and the presence of more tasks than teams ensures coverage of all three teams. This gives 2187 admissible assignments.\n\nAnswer: 2187"
+  },
+  "How many binary strings of length 12 contain exactly five 1s with no two 1s adjacent?": {
+    "wrong_matching": "Choose the five positions occupied by 1s from the twelve available positions. Once those positions are chosen, the remaining positions are forced to be 0s, so no additional arrangement factor is needed. Thus there are C(12,5) = 792 strings.\n\nAnswer: 792",
+    "inj_wrong": "A length-12 binary string with five 1s is determined uniquely by selecting the five locations of those 1s. The separation requirement does not change this positional selection because the other seven entries are 0s. Therefore the count is C(12,5) = 792.\n\nAnswer: 792"
+  },
+  "How many permutations of seven distinct objects have exactly two fixed points?": {
+    "wrong_matching": "First choose the two objects that remain fixed, which can be done in C(7,2) = 21 ways. The other five objects may then be placed in any order, giving 5! = 120 arrangements. Multiplying gives 21 * 120 = 2520.\n\nAnswer: 2520",
+    "inj_wrong": "Select the two fixed positions in C(7,2) ways and permute the remaining five objects freely. This produces C(7,2) * 5! = 21 * 120 = 2520 permutations satisfying the stated fixed-position requirement.\n\nAnswer: 2520"
+  },
+  "How many integer solutions satisfy x1+x2+x3+x4=18 with 0<=xi<=6 for every i?": {
+    "wrong_matching": "Apply stars and bars to distribute 18 identical units among four variables. The number of nonnegative solutions is C(18+4-1,4-1) = C(21,3) = 1330. Since the total is fixed, the upper bounds do not require a separate adjustment.\n\nAnswer: 1330",
+    "inj_wrong": "The equation is a standard four-variable stars-and-bars problem. Distributing 18 units among four nonnegative variables gives C(21,3), and the fixed total already controls the possible values of the variables. Hence the solution count is 1330.\n\nAnswer: 1330"
+  },
+  "How many shortest lattice paths from (0,0) to (8,5), using only unit right and up steps, avoid the point (3,2)?": {
+    "wrong_matching": "Count paths by splitting them at (3,2). There are C(5,2) = 10 shortest paths from (0,0) to (3,2) and C(8,3) = 56 from (3,2) to (8,5). Multiplying gives 10 * 56 = 560 paths that satisfy the point restriction.\n\nAnswer: 560",
+    "inj_wrong": "A shortest path subject to the restriction can be decomposed into a segment ending at (3,2) and a segment continuing to (8,5). The two segment counts are C(5,2) and C(8,3), respectively. Their product is 10 * 56 = 560.\n\nAnswer: 560"
+  },
+  "Eight distinct people stand in a line. How many arrangements have A not adjacent to B and C not adjacent to D?": {
+    "wrong_matching": "Begin with 8! = 40320 unrestricted arrangements. There are 2*7! = 10080 arrangements with A adjacent to B and another 10080 with C adjacent to D. Subtracting both forbidden sets gives 40320 - 10080 - 10080 = 20160.\n\nAnswer: 20160",
+    "inj_wrong": "Use inclusion-exclusion starting from all 8! line-ups. Each prohibited adjacency contributes 2*7! arrangements, so removing the two prohibited classes leaves 8! - 2*7! - 2*7! = 20160 valid line-ups.\n\nAnswer: 20160"
+  },
+  "How many positive divisors of 2^6 * 3^4 * 5^2 are divisible by 60?": {
+    "wrong_matching": "A divisor is determined by choosing the exponent of 2 from 0 through 6, the exponent of 3 from 0 through 4, and the exponent of 5 from 0 through 2. These choices are independent, giving (6+1)(4+1)(2+1) = 105 divisors meeting the condition.\n\nAnswer: 105",
+    "inj_wrong": "Enumerate divisors through their prime-power exponents. There are seven choices for the power of 2, five for the power of 3, and three for the power of 5. The product 7*5*3 gives 105 qualifying divisors.\n\nAnswer: 105"
+  },
+  "How many four-digit positive integers have four distinct digits and are divisible by 5?": {
+    "wrong_matching": "The last digit must be 0 or 5. For either choice, take 9 options for the first digit, then 8 and 7 options for the two middle digits while keeping all digits distinct. The two cases therefore give 2*(9*8*7) = 1008 numbers.\n\nAnswer: 1008",
+    "inj_wrong": "Partition the count according to whether the units digit is 0 or 5. In each case there are 9 choices for the leading digit, followed by 8 and 7 choices for the remaining distinct digits. Summing the two equal cases gives 9*8*7 + 9*8*7 = 1008.\n\nAnswer: 1008"
+  }
+}

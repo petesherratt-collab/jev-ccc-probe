@@ -1,0 +1,25 @@
+# Observation files ARE tracked: every number in the write-up recomputes from them,
+# and the reproducibility appendix cites them by name. They total ~9MB, which git
+# handles fine and which is the price of a paper whose results can be rechecked
+# without an API key.
+
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# editor / OS noise
+.DS_Store
+*.swp
+
+# superseded drafts and local scratch
+*.pre-C5
+*.bak
+_obs_*_pilot.jsonl
+items_demo.jsonl
+
+# never commit credentials. The runners read a key from --env-file or the
+# environment and never write one anywhere.
+.env
+.env.*
+*.env.txt

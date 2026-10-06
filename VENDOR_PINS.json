@@ -1,0 +1,28 @@
+{
+  "_comment": "Vendored byte-identical from the harness repo and hash-pinned, following the harness's own practice of vendoring and pinning its substrate (_SUBSTRATE_PIN, byte-identical v0.6 to v1.5.1). A pin makes this repo self-contained and reproducible; a submodule would make it a moving reference. Includes experiments/results/ -- the FROZEN arith stimulus cache. Without it run_provenance_injection regenerates the injected texts from a model, which needs a key and yields DIFFERENT stimuli.",
+  "modules": {
+    "_load_env.py": "7f9f107f406882f7cd77326e3fc85c78b48c7c544795625d5dc165ad3a1ea369",
+    "ccc_code_items.py": "1b7a306c31cd4e869fe45a89fcb0683e474e07f1d4902079b048555b3406e76c",
+    "ccc_code_runner.py": "69cc9ec0d8a51aacdb498461120cb951a0bca16acd876a20a0e8ca7619aa82c6",
+    "ccc_sql_items.py": "72ce9e7dccbbc844261f53820c3f7c5ac7b09e5764a1a5858d207b292f56629c",
+    "judge_faultinject.py": "6c7921d47b9b6e42e041becfa11a7ec8db3492b6376f9b509cfa304cea8850a5",
+    "judge_integrity_poc.py": "916914370759211c8990be7b7b04e6e2cab1849d19498994ffc9a45d58b6eabc",
+    "judge_integrity_real.py": "fceea6e308f0472c295fb6a4ed6e4a962cca455258de5c45cc6b234c9938eb1a",
+    "judge_sensitivity_probe.py": "86865e8cfc5f42672969c2827736392ef4205be15667cefec15519bf53ab69af",
+    "judge_threestage.py": "f19998f7bc21c1734ccae927a986421cc9f2901d0e026c1a7dd22c68b4c65193",
+    "judge_threestage_hard.py": "52a1c31646b039b1953a7f820c7e43e3a90b44ff5f0cd628d61d133749f07224",
+    "judge_twostage.py": "64012f8e7706d77de0eb1d4fc4573096bf4fba479c701c2f9dee577978604cd9",
+    "provenance_injection_harness.py": "d56647fde89e8cca92dd9f1d21822c4cca125cb12bf3987008795f1853c52aa7",
+    "results/provinj_texts.json": "ced527048fda98882a01f218990f07c4a29776e7041ab2b37bb1edd53031b857",
+    "results/provinj_texts_confirmatory.json": "1987414b7f1a8cd7df1ce7ef04d363bfeeaea7b01c375f925db491e8238e6a98",
+    "results/provinj_texts_confirmatory.sha256": "ae810cb6c11fab94ded117360b59fdb0a6b4be48dcc582c0706c9d445df0b849",
+    "results/provinj_texts_confirmatory_overrides.json": "1b35765c267da30d0ff2ad2089aa90f9f757c0e8c73df0848dc2bdcff11e3fe2",
+    "run_ccc_codedomain.py": "046a5aa27dbb275f14c0384b7fbd073086903b2ff97e25e5d837858abbfdf14e",
+    "run_ccc_sql.py": "293114e5227ccb53fbe01a67cd3cc1af7d88581a77609087425436e441e279b5",
+    "run_provenance_injection.py": "4079accf9c7a8dd3fe9d492c451e31413c20b45b3dd3abbf0f3d5bb1f0a967fa"
+  },
+  "source_branch": "claude/amazing-faraday-gvs9fy",
+  "source_commit": "9f7437ae7c2ab9dd63a8fa37420ed477bb20376f",
+  "source_repo": "petesherratt-collab/The-Generated-Trace-Leak-Harness",
+  "vendored_at": "2026-10-06"
+}
